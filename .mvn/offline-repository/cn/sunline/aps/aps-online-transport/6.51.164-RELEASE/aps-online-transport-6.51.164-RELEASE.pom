@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cn.sunline.aps</groupId>
+		<artifactId>aps-online-parent</artifactId>
+		<version>6.51.164-RELEASE</version>
+
+	</parent>
+
+	<artifactId>aps-online-transport</artifactId>
+	<packaging>pom</packaging>
+
+	<description>Transport Parent Project</description>
+	<modules>
+		<module>aps-online-transport-rest</module>
+		<module>aps-online-transport-mq</module>
+        <module>aps-online-transport-kafka</module>
+    </modules>
+		
+</project>

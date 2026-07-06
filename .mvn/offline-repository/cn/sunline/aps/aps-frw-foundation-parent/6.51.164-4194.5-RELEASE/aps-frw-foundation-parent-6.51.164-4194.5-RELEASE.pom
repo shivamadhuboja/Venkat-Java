@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>cn.sunline.aps</groupId>
+		<artifactId>aps-framework-parent</artifactId>
+		<version>6.51.164-4194.5-RELEASE</version>
+	</parent>
+	<groupId>cn.sunline.aps</groupId>
+	<artifactId>aps-frw-foundation-parent</artifactId>
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<properties>
+		<aps.foundation.version>6.51.164-4194.5-RELEASE</aps.foundation.version>
+	</properties>
+	<modules>
+		<module>aps-component-api</module>
+		<module>aps-scheduler-client-api</module>
+		<module>aps-boot</module>
+		<module>aps-dal</module>
+        <module>aps-component-spec</module>
+        <!--		<module>integration/middleware</module>-->
+    </modules>
+	<dependencyManagement>
+		<!-- Import Third Depenedencies Version Management -->
+		<dependencies>
+			<!--begin aps-component-api -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-component-api</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<!--end aps-component-api -->
+			
+			<!--begin aps-scheduler-client-api -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-client-api</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<!--end aps-scheduler-client-api -->
+
+			<!-- begin aps-boot -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-actuator</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-frw-boot-api</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-frw-boot-starter</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-boot-core</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-boot-autoconfigure</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-system-param</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<!-- begin aps-dal -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-dal-datasource</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-dal-shardingsphere</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<!-- end aps-dal -->
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-config-processor</artifactId>
+				<version>${aps.config.processor.version}</version>
+			</dependency>
+			<!-- end aps-apm -->
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-framework-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<!-- end aps-component-starter-->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gateway-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gls-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-base-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-spec</artifactId>
+				<version>${aps.foundation.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
+

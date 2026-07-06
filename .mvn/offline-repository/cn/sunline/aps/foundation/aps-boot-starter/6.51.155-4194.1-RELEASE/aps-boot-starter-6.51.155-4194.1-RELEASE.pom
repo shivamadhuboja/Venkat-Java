@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.sunline.aps.foundation</groupId>
+        <artifactId>aps-boot-parent</artifactId>
+        <version>6.51.155-4194.1-RELEASE</version>
+    </parent>
+
+    <artifactId>aps-boot-starter</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-boot-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-admin-starter</artifactId>
+        </dependency>
+    </dependencies>
+</project>

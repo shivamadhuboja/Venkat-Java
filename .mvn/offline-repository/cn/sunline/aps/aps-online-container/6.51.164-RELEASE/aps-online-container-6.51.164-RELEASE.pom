@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cn.sunline.aps</groupId>
+		<artifactId>aps-online-parent</artifactId>
+		<version>6.51.164-RELEASE</version>
+
+	</parent>
+
+
+	<artifactId>aps-online-container</artifactId>
+
+	<properties>
+		<aps-module>true</aps-module>
+		<access-rule>*/**</access-rule>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>cn.sunline.aps</groupId>
+			<artifactId>aps-online-engine-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.sunline.aps</groupId>
+			<artifactId>aps-online-default-traffic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+		<!-- 解决jasperreports本身依赖与其他项目依赖的版本冲突问题 -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+		</dependency>
+		<!-- 升级到3.2.2  之前老的版本有 反序列化Bug http://blog.csdn.net/hengyunabc/article/details/49804577 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

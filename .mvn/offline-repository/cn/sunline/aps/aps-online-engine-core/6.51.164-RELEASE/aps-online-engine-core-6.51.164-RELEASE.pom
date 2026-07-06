@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>cn.sunline.aps</groupId>
+        <artifactId>aps-online-engine</artifactId>
+        <version>6.51.164-RELEASE</version>
+
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aps-online-engine-core</artifactId>
+
+    <properties>
+        <aps-module>true</aps-module>
+        <access-rule>*/**</access-rule>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-frw-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-apm-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-metadata-loader-remote</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-dal-datasource</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

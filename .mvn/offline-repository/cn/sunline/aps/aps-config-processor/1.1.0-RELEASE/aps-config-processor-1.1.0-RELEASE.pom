@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.sunline.aps</groupId>
+    <artifactId>aps-config-processor</artifactId>
+    <version>1.1.0-RELEASE</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <proguard.skip>false</proguard.skip>
+        <aps.repos.releases.url>*</aps.repos.releases.url>
+        <aps.repos.snapshots.url>*</aps.repos.snapshots.url>
+    </properties>
+
+    <dependencies>
+        <!-- 自动生成SPI，可以避免手动配置注解处理器的SPI，手动配置比较麻烦，要解决编译问题 -->
+        <dependency>
+            <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>1.1.1</version>
+            <optional>true</optional>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- @ConfigurationProperties annotation processing (metadata for IDEs)生成IDE跳转信息的 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>2.7.14</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>edsp-repos</id>
+            <activation>
+                <property>
+                    <name>edsp-repos</name>
+                </property>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>edsp-repos-releases</id>
+                    <name>Releases</name>
+                    <url>${aps.repos.releases.url}</url>
+                </repository>
+                <snapshotRepository>
+                    <id>edsp-repos-snapshots</id>
+                    <name>Snapshots</name>
+                    <url>${aps.repos.snapshots.url}</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>proguard</id>
+            <properties>
+                <proguard.conf>${basedir}/proguard.conf</proguard.conf>
+                <proguard.skip>true</proguard.skip>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.wvengen</groupId>
+                        <artifactId>proguard-maven-plugin</artifactId>
+                        <version>2.0.14</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>proguard</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <skip>${proguard.skip}</skip>
+                            <obfuscate>true</obfuscate>
+                            <proguardInclude>${proguard.conf}</proguardInclude>
+                            <addMavenDescriptor>true</addMavenDescriptor>
+                            <inFilter>!META-INF/INDEX.LIST</inFilter>
+                            <injar>${project.build.finalName}.${project.packaging}</injar>
+                            <outjar>${project.build.finalName}.${project.packaging}</outjar>
+                            <libs>
+                                <lib>${java.home}/lib/rt.jar</lib>
+                                <lib>${java.home}/lib/jsse.jar</lib>
+                            </libs>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

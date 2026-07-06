@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.sunline.aps</groupId>
+        <artifactId>aps-online-transport</artifactId>
+        <version>6.51.164-RELEASE</version>
+
+    </parent>
+
+    <artifactId>aps-online-transport-rest</artifactId>
+
+    <properties>
+        <aps-module>true</aps-module>
+        <access-rule>*/**</access-rule>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-container</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-engine-ddd</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-invoke</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <groupId>org.bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <artifactId>bcpkix-jdk18on</artifactId>
+            <groupId>org.bouncycastle</groupId>
+        </dependency>
+
+    </dependencies>
+
+</project>

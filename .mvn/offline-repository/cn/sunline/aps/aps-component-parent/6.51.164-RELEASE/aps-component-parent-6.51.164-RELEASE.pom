@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>cn.sunline.aps</groupId>
+		<artifactId>aps-frw-foundation-parent</artifactId>
+		<version>6.51.164-RELEASE</version>
+		<relativePath>../aps-foundation/</relativePath>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<artifactId>aps-component-parent</artifactId>
+	<version>6.51.164-RELEASE</version>
+
+	<properties>
+		<aps.component.version>6.51.164-RELEASE</aps.component.version>
+
+		<aps.abstract.component.version>${aps.component.version}</aps.abstract.component.version>
+		<aps.online.version>${aps.component.version}</aps.online.version>
+		<aps.batch.version>${aps.component.version}</aps.batch.version>
+		<aps.invoke.version>6.51.164-RELEASE</aps.invoke.version>
+		<aps.metadata.version>${aps.component.version}</aps.metadata.version>
+		<aps.test.version>${aps.component.version}</aps.test.version>
+		<aps.traffic.version>${aps.component.version}</aps.traffic.version>
+		<aps.txc.version>6.51.164-RELEASE</aps.txc.version>
+		<aps.traffic.version>6.51.164-RELEASE</aps.traffic.version>
+		<aps.sharding.version>6.51.164-RELEASE</aps.sharding.version>
+		<aps.param.version>6.51.164-RELEASE</aps.param.version>
+		<aps.sequence.client.version>${aps.component.version}</aps.sequence.client.version>
+		<aps.scheduler.version>6.51.164-RELEASE</aps.scheduler.version>
+		<aps.timer.version>6.51.164-RELEASE</aps.timer.version>
+		<aps.mq.version>6.51.164-RELEASE</aps.mq.version>
+		<aps.gls.client.version>6.51.85-RELEASE</aps.gls.client.version>
+		<aps.aggregation.client.version>${aps.component.version}</aps.aggregation.client.version>
+		<aps.component.autoconfigure.version>${aps.component.version}</aps.component.autoconfigure.version>
+		<aps.component.starter.version>${aps.component.version}</aps.component.starter.version>
+		<aps.filetransfer.version>${aps.component.version}</aps.filetransfer.version>
+		<aps.common.resource.version>${aps.component.version}</aps.common.resource.version>
+		<aps.message.client.version>${aps.component.version}</aps.message.client.version>
+		<aps.bizcore.components.version>${aps.component.version}</aps.bizcore.components.version>
+	</properties>
+	<modules>
+		<module>aps-metadata</module>
+		<module>aps-online</module>
+		<module>aps-batch</module>
+		<module>aps-invoke</module>
+		<module>aps-timer</module>
+		<module>aps-txc</module>
+		<module>aps-traffic</module>
+		<module>aps-test</module>
+		<module>aps-scheduler</module>
+		<module>aps-mq</module>
+		<module>aps-sharding</module>
+		<module>aps-abstract-component</module>
+		<module>aps-data-aggregation-client</module>
+		<module>aps-component-sample</module>
+		<module>aps-component-autoconfigure</module>
+		<module>aps-component-starter</module>
+		<module>aps-filetransfer-client</module>
+		<module>aps-message-client</module>
+		<module>aps-discovery</module>
+        <module>aps-param</module>
+        <module>aps-gov</module>
+    </modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-server</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-client</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-api</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-core</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-repository</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-discovery-common</artifactId>
+				<version>${aps.component.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps.foundation</groupId>
+				<artifactId>aps-foundation-parent</artifactId>
+				<version>${aps.foundation.parent.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<!-- begin aps-abstract-component -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-abstract-component</artifactId>
+				<version>${aps.abstract.component.version}</version>
+			</dependency>
+			<!-- end aps-abstract-component -->
+
+			<!-- begin aps-online -->
+			<!-- aps-online-api -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-api</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gov-common</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gov-sequence</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gov-batch</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-container -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-container</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-default -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-default-dal</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-default-sequence</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-default-traffic</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-orchestrator -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-orchestrator</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-engine -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-engine-core</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-engine-ddd</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-transport -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-transport-rest</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-transport-mq</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-transport-kafaka</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<!-- aps-online-integration -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-sequence</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-txc</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-lock</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-config-db</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-invoke</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-gov</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-metrics</artifactId>
+				<version>${aps.online.version}</version>
+			</dependency>
+			<!--end aps-online -->
+
+			<!-- begin aps-batch -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-batch-api</artifactId>
+				<version>${aps.batch.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-batch-core</artifactId>
+				<version>${aps.batch.version}</version>
+			</dependency>
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-batch-autoconfigure</artifactId>
+                <version>${aps.batch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-batch-integration-scheduler</artifactId>
+                <version>${aps.batch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-batch-bizcore</artifactId>
+                <version>${aps.batch.version}</version>
+            </dependency>
+            <!-- end aps-batch -->
+
+            <!-- begin aps-invoke -->
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-invoke-core</artifactId>
+                <version>${aps.invoke.version}</version>
+            </dependency>
+
+            <dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-invoke-gls</artifactId>
+				<version>${aps.invoke.version}</version>
+			</dependency>
+			<!-- end aps-invoke -->
+
+			<!-- begin aps-metadata -->
+			<!-- metadata -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-base</artifactId>
+				<version>${aps.metadata.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-loader</artifactId>
+				<version>${aps.metadata.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-mybatis</artifactId>
+				<version>${aps.metadata.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-loader-remote</artifactId>
+				<version>${aps.metadata.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-loader-excel</artifactId>
+				<version>${aps.metadata.version}</version>
+			</dependency>
+			<!-- end aps-metadata -->
+
+			<!-- begin aps-param -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-param-reload</artifactId>
+				<version>${aps.param.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-param-sync</artifactId>
+				<version>${aps.param.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-param-ops</artifactId>
+				<version>${aps.param.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-param-common</artifactId>
+				<version>${aps.param.version}</version>
+			</dependency>
+			<!-- end aps-param -->
+
+
+			<!-- begin aps-scheduler-client -->
+			<!--job-client version control -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-common</artifactId>
+				<version>${aps.scheduler.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-masterelector</artifactId>
+				<version>${aps.scheduler.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-job-client</artifactId>
+				<version>${aps.scheduler.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-access-client</artifactId>
+				<version>${aps.scheduler.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-dayend-client</artifactId>
+				<version>${aps.scheduler.version}</version>
+			</dependency>
+
+
+			<!-- end aps-scheduler-client -->
+
+			<!-- begin aps-traffic -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-core</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-common</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-router</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-default</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-auth</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-config</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-sentinel</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-integration-governor</artifactId>
+				<version>${aps.traffic.version}</version>
+			</dependency>
+			<!-- end aps-traffic -->
+
+			<!-- begin aps-timer -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-client-api</artifactId>
+				<version>${aps.timer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-client-core</artifactId>
+				<version>${aps.timer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-client-repository</artifactId>
+				<version>${aps.timer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-client-web</artifactId>
+				<version>${aps.timer.version}</version>
+			</dependency>
+			
+			<!-- end aps-timer -->
+
+			<!-- begin aps-mq -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-mq-common</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-mq-reliable</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-rocketmq-core</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-mq-gls</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-rabbitmq-core</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-kafka-core</artifactId>
+				<version>${aps.mq.version}</version>
+			</dependency>
+			<!-- end aps-mq -->
+
+			<!-- begin aps-test -->
+			<dependency>
+				<groupId>cn.sunline.aps.test</groupId>
+				<artifactId>aps-test-autoconfiguration</artifactId>
+				<version>${aps.test.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps.test</groupId>
+				<artifactId>aps-test-core</artifactId>
+				<version>${aps.test.version}</version>
+			</dependency>
+			<!-- end aps-test -->
+
+			<!-- begin aps-txc -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-txc-core</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-txc-spring</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-txc-autoconfigure</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-lock-api</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-txc-repository-mybatis</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-lock-core</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-lock-autoconfigure</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-lock-starter</artifactId>
+				<version>${aps.txc.version}</version>
+			</dependency>
+			<!-- end aps-txc -->
+			<!-- aps-filetransfer-client begin-->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-filetransfer-client-autoconfigure</artifactId>
+				<version>${aps.filetransfer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-filetransfer-client-core</artifactId>
+				<version>${aps.filetransfer.version}</version>
+			</dependency>
+			<!-- aps-filetransfer-client end-->
+
+			<!-- aps-message-client begin-->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-autoconfigure</artifactId>
+				<version>${aps.message.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-core</artifactId>
+				<version>${aps.message.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-batch</artifactId>
+				<version>${aps.message.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-common</artifactId>
+				<version>${aps.message.client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-parameter-maintain</artifactId>
+				<version>${aps.message.client.version}</version>
+			</dependency>
+			<!-- aps-message-client end-->
+
+			<!-- begin aps-sharding -->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-sharding-core</artifactId>
+				<version>${aps.sharding.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-sharding-oceanbase</artifactId>
+				<version>${aps.sharding.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-sharding-shardingsphere</artifactId>
+				<version>${aps.sharding.version}</version>
+			</dependency>
+			<!-- end aps-sharding -->
+
+			<!-- begin aps-gcm-client -->
+<!--			<dependency>-->
+<!--				<groupId>cn.sunline.aps</groupId>-->
+<!--				<artifactId>aps-gls-gcm-common</artifactId>-->
+<!--				<version>${aps.gls.client.version}</version>-->
+<!--			</dependency>-->
+<!--			<dependency>-->
+<!--				<groupId>cn.sunline.aps</groupId>-->
+<!--				<artifactId>aps-gcm-client-core</artifactId>-->
+<!--				<version>${aps.gls.client.version}</version>-->
+<!--			</dependency>-->
+<!--			&lt;!&ndash; end aps-gcm-client &ndash;&gt;-->
+
+<!--			&lt;!&ndash; begin aps-gls-client &ndash;&gt;-->
+<!--			<dependency>-->
+<!--				<groupId>cn.sunline.aps</groupId>-->
+<!--				<artifactId>aps-gls-client-core</artifactId>-->
+<!--				<version>${aps.gls.client.version}</version>-->
+<!--			</dependency>-->
+<!--			&lt;!&ndash; end aps-gls-client &ndash;&gt;-->
+
+			<!-- begin gls gcm start -->
+			<!--<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gls-starter</artifactId>
+				<version>${aps.gls.client.version}</version>
+			</dependency>-->
+			<!-- end aps-gls-client -->
+
+			<!-- begine aps-data-aggregation-client-->
+			 <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-data-aggregation-client-core</artifactId>
+                <version>${aps.aggregation.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-data-aggregation-common</artifactId>
+                <version>${aps.aggregation.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-data-aggregation-client-autoconfigure</artifactId>
+                <version>${aps.aggregation.client.version}</version>
+            </dependency>
+			<!-- end aps-data-aggregation-client-->
+			<!-- begin aps-component-autoconfigure-->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-component-autoconfigure</artifactId>
+				<version>${aps.component.autoconfigure.version}</version>
+			</dependency>
+			<!-- end aps-component-autoconfigure-->
+			<!-- begin aps-component-starter-->
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-component-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-batch-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-data-aggregation-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-invoke-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-metadata-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-param-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-rabbitmq-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-rocketmq-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-kafkamq-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-job-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-scheduler-access-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-test-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-timer-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-traffic-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-txc-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-filetransfer-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-online-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-message-client-starter</artifactId>
+				<version>${aps.component.starter.version}</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+</project>
+

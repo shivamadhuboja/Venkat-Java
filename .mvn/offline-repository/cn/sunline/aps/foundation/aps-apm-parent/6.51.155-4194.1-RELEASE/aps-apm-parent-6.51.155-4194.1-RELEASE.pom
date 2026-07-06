@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.sunline.aps.foundation</groupId>
+        <artifactId>aps-foundation-parent</artifactId>
+        <version>6.51.155-4194.1-RELEASE</version>
+    </parent>
+
+    <artifactId>aps-apm-parent</artifactId>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>aps-apm-api</module>
+        <module>aps-apm-core</module>
+        <module>aps-apm-autoconfigure</module>
+        <module>aps-apm-starter</module>
+<!--        <module>aps-apm-starter-sofa</module>-->
+        <module>aps-apm-plugin</module>
+    </modules>
+    <properties>
+        <sofa.rpc.verison>5.12.0</sofa.rpc.verison>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.jmockit</groupId>
+            <artifactId>jmockit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.alipay.sofa</groupId>
+                <artifactId>sofa-rpc-all</artifactId>
+                <version>${sofa.rpc.verison}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>aps-service-parent</artifactId>
+        <groupId>cn.sunline.aps.foundation</groupId>
+        <version>6.51.155-4194.1-RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aps-service-rest</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-service-engine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-config-core</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

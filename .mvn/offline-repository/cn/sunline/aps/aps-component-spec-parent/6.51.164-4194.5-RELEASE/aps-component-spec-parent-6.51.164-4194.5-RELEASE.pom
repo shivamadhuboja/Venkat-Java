@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>aps-frw-foundation-parent</artifactId>
+        <groupId>cn.sunline.aps</groupId>
+        <version>6.51.164-4194.5-RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <packaging>pom</packaging>
+
+    <artifactId>aps-component-spec-parent</artifactId>
+
+
+    <properties>
+        <aps-module>true</aps-module>
+        <access-rule>*;**/*</access-rule>
+    </properties>
+    
+    <modules>
+        <module>aps-framework-spec</module>
+        <module>aps-gateway-spec</module>
+        <module>aps-gls-spec</module>
+        <module>aps-scheduler-spec</module>
+        <module>aps-discovery-spec</module>
+        <module>aps-base-spec</module>
+        <module>aps-timer-spec</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps.foundation</groupId>
+            <artifactId>aps-model</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-maven-plugin</artifactId>
+                <configuration>
+                    <generateArgs>
+                        <jsfBuild>false</jsfBuild>
+                    </generateArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${basedir}/target/gen</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- APS maven插件必须依赖下面的插件，将工程标记为APStack项目，打出的jar才能被其他项目引用其元数据 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <!-- maven打包通过设置这个标识，标记为APStack项目，打出的jar才能被其他项目引用其基础类型 -->
+                            <aps-module>${aps-module}</aps-module>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>${project.artifactId}</artifactId>
+                            <version>${project.version}</version>
+                            <access-rule>${access-rule}</access-rule>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+
+    </build>
+
+</project>

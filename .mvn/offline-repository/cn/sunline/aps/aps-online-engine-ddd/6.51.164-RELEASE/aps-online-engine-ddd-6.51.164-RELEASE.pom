@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>cn.sunline.aps</groupId>
+        <artifactId>aps-online-engine</artifactId>
+        <version>6.51.164-RELEASE</version>
+
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aps-online-engine-ddd</artifactId>
+
+    <properties>
+        <aps-module>true</aps-module>
+        <access-rule>*/**</access-rule>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-engine-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.sunline.aps</groupId>
+            <artifactId>aps-online-container</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

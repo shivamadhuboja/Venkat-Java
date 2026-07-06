@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>aps-online-parent</artifactId>
+        <groupId>cn.sunline.aps</groupId>
+        <version>6.51.164-RELEASE</version>
+
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aps-online-integration</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>aps-online-sequence</module>
+        <module>aps-online-txc</module>
+        <module>aps-online-lock</module>
+        <module>aps-online-invoke</module>
+        <module>aps-online-config-db</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>cn.sunline.aps</groupId>
+                <artifactId>aps-maven-plugin</artifactId>
+                <configuration>
+                    <generateArgs>
+                        <genRest>true</genRest> <!-- 开启生成rest类 -->
+                    </generateArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 元数据校验生成类插件,必选 -->
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${basedir}/target/gen</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

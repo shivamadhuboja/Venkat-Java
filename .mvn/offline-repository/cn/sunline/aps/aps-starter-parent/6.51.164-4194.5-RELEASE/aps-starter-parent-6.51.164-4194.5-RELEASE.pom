@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>aps-component-parent</artifactId>
+		<groupId>cn.sunline.aps</groupId>
+		<version>6.51.164-4194.5-RELEASE</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>aps-starter-parent</artifactId>
+	<packaging>pom</packaging>
+
+	<properties>
+		<!--可以替换为真实版本，对外独立提供starter版本-->
+		<aps.foundation.version>6.51.164-4194.5-RELEASE</aps.foundation.version>
+		<aps.dependencies.version>6.51.164-4194.5-RELEASE</aps.dependencies.version>
+		<!--可以替换为真实版本，对外独立提供starter版本-->
+		<aps.starter.version>6.51.164-4194.5-RELEASE</aps.starter.version>
+		<!--临时放这里，因为会经常变动-->
+		<camp.version>4.6.11-RELEASE</camp.version>
+	</properties>
+
+	<modules>
+		<module>aps-batch-all-starter</module>
+		<module>aps-online-all-starter</module>
+	</modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-camp-cli</artifactId>
+				<version>${camp.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-batch-all-starter</artifactId>
+				<version>${aps.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-online-all-starter</artifactId>
+				<version>${aps.starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.sunline.aps</groupId>
+				<artifactId>aps-gls-starter</artifactId>
+				<version>${aps.starter.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<version>6.51.164-4194.5-RELEASE</version>
+	<groupId>cn.sunline.aps</groupId>
+</project>

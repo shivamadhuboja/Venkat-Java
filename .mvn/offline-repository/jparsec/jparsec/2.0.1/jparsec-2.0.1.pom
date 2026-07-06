@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jparsec</groupId>
+	<artifactId>jparsec</artifactId>
+	<version>2.0.1</version>
+	<packaging>jar</packaging>
+	<developers>
+		<developer>
+			<email>ajoo.email@gmail.com</email>
+		</developer>
+	</developers>
+
+	<name>jparsec</name>
+	<url>http://jparsec.codehaus.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0 (the "License")</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<comments>Copyright (C) Codehaus.org - Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</comments>
+		</license>
+
+	</licenses>
+	<build>
+		<plugins>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>2.3.2</version>
+	            <configuration>
+	                <source>1.6</source>
+	                <target>1.6</target>
+	                <!-- AllTests.java is used for java build and not necessary for maven build -->
+	                <testExcludes>
+              			<exclude>**/AllTests.java</exclude>
+              		</testExcludes>      
+	            </configuration>
+       		</plugin>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-scm-plugin</artifactId>
+		        <version>1.8</version>
+		        <configuration>
+		         	<goals>install</goals>
+		        </configuration>
+	      	</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>set-osgi-version</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>parse-version</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+							<Bundle-Name>${name}</Bundle-Name>
+							<Bundle-SymbolicName>${groupId}.${artifactId}.source</Bundle-SymbolicName>
+							<Bundle-Vendor>${organization.name}</Bundle-Vendor>
+							<Bundle-Version>${parsedVersion.osgiVersion}</Bundle-Version>
+							<Eclipse-SourceBundle>${groupId}.${artifactId};version="${parsedVersion.osgiVersion}";roots:="."</Eclipse-SourceBundle>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.1_3</version>
+		</dependency>
+		<dependency>
+			<groupId>easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.2</version>
+		</dependency>
+	</dependencies>
+	
+	<description>What is jparsec?
+
+Jparsec is a recursive-desent parser combinator framework written for Java. It constructs parsers in native Java language only.
+
+Why yet another parser framework?
+
+Jparsec stands out for its combinator nature. It is no parser generator like YACC or ANTLR. No extra grammar file is required. Grammar is written in native Java /C# language, which also means you can utilize all the utilities in the Java/.Net community to get your parser fancy.
+
+What does &quot;jparsec&quot; stand for?
+
+Jparsec is an implementation of Haskell Parsec on the Java platform.
+
+Feature highlights.
+
+operator precendence grammar.
+accurate error location and customizable error message.
+rich set of pre-defined reusable combinator functions.
+declarative API that resembles BNF.
+
+dev-subscribe@jparsec.codehaus.org
+user-subscribe@jparsec.codehaus.org</description>
+	<organization>
+		<name>codehaus.org</name>
+		<url>http://jparsec.codehaus.org</url>
+	</organization>
+	<scm>
+		<url>http://jparsec.codehaus.org</url>
+		<developerConnection>codehaus.org</developerConnection>
+	</scm>
+	<parent>
+		<groupId>org.apache</groupId>
+		<artifactId>apache</artifactId>
+		<version>10</version>
+	</parent>
+</project>
