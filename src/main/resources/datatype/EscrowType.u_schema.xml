@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        id="EscrowType"
+        package="cn.sunline.ltts.busi.escrowdemo.datatype"
+        longname="Escrow demo data types"
+        classgen="normal"
+        xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <restrictionType id="U_ID" longname="Escrow identifier" base="string" maxLength="64" byCharacter="true"/>
+    <restrictionType id="U_NAME" longname="Name" base="string" maxLength="128" byCharacter="true"/>
+    <restrictionType id="U_VERSION" longname="Version" base="string" maxLength="64" byCharacter="true"/>
+    <restrictionType id="U_STATUS" longname="Status" base="string" maxLength="16" byCharacter="true"/>
+    <restrictionType id="U_TIME" longname="ISO-8601 time" base="string" maxLength="40" byCharacter="true"/>
+    <restrictionType id="U_MESSAGE" longname="Message" base="string" maxLength="512" byCharacter="true"/>
+</schema>

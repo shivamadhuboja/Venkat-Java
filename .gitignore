@@ -1,0 +1,9 @@
+/target/
+/.mvn/offline-repository/
+/dist/
+/escrow-manifest/DEPENDENCIES.txt
+/.idea/
+/.vscode/
+*.iml
+*.log
+.DS_Store

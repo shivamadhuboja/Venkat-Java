@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        id="EscrowDict"
+        package="cn.sunline.ltts.busi.escrowdemo.dict"
+        longname="Escrow demo dictionary"
+        classgen="normal"
+        xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <complexType id="A" longname="Escrow fields" dict="true" abstract="false" introduct="false">
+        <element id="escrow_id" longname="Escrow ID" type="EscrowType.U_ID" required="false" desc="托管编号" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="depositor" longname="Depositor" type="EscrowType.U_NAME" required="false" desc="代码提交方" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="artifact_name" longname="Artifact name" type="EscrowType.U_NAME" required="false" desc="托管制品名称" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="artifact_version" longname="Artifact version" type="EscrowType.U_VERSION" required="false" desc="托管制品版本" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="receipt_no" longname="Receipt number" type="EscrowType.U_ID" required="false" desc="托管收据号" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="status" longname="Status" type="EscrowType.U_STATUS" required="false" desc="受理状态" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="accepted_at" longname="Accepted at" type="EscrowType.U_TIME" required="false" desc="受理时间" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="message" longname="Message" type="EscrowType.U_MESSAGE" required="false" desc="受理说明" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+</schema>

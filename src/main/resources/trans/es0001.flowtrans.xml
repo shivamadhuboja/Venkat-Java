@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flowtran xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          id="es0001"
+          longname="Software escrow deposit registration"
+          kind="maintain"
+          package="cn.sunline.ltts.busi.escrowdemo.trans"
+          xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[Software Escrow POC：登记一次源代码制品托管并返回电子收据。]]></description>
+    <interface package="cn.sunline.ltts.busi.escrowdemo.trans.intf">
+        <input packMode="true">
+            <field id="escrow_id" type="EscrowType.U_ID" required="true" multi="false" array="false" longname="Escrow ID" desc="托管编号" ref="EscrowDict.A.escrow_id"/>
+            <field id="depositor" type="EscrowType.U_NAME" required="true" multi="false" array="false" longname="Depositor" desc="代码提交方" ref="EscrowDict.A.depositor"/>
+            <field id="artifact_name" type="EscrowType.U_NAME" required="true" multi="false" array="false" longname="Artifact name" desc="托管制品名称" ref="EscrowDict.A.artifact_name"/>
+            <field id="artifact_version" type="EscrowType.U_VERSION" required="true" multi="false" array="false" longname="Artifact version" desc="托管制品版本" ref="EscrowDict.A.artifact_version"/>
+        </input>
+        <output asParm="true" packMode="true">
+            <field id="receipt_no" type="EscrowType.U_ID" required="false" multi="false" array="false" longname="Receipt number" desc="托管收据号" ref="EscrowDict.A.receipt_no"/>
+            <field id="status" type="EscrowType.U_STATUS" required="false" multi="false" array="false" longname="Status" desc="受理状态" ref="EscrowDict.A.status"/>
+            <field id="accepted_at" type="EscrowType.U_TIME" required="false" multi="false" array="false" longname="Accepted at" desc="受理时间" ref="EscrowDict.A.accepted_at"/>
+            <field id="message" type="EscrowType.U_MESSAGE" required="false" multi="false" array="false" longname="Message" desc="受理说明" ref="EscrowDict.A.message"/>
+        </output>
+        <property packMode="true"/>
+        <printer packMode="true"/>
+    </interface>
+    <flow>
+        <method id="registerDeposit" method="registerDeposit" longname="Register escrow deposit"/>
+    </flow>
+    <outMapping/>
+    <propertyToPrinterMapping/>
+    <outToPrinterMapping/>
+</flowtran>
